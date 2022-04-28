@@ -7,6 +7,9 @@
 *.o
 *.obj
 prac.cpp
+prac2.cpp
+prac3.cpp
+
 
 # Precompiled Headers
 *.gch
