@@ -1,12 +1,17 @@
 #include<bits/stdc++.h>
-using namespace std;
 
 
 //hashmap===============
-struct city_details{
-    string name;
-    int population;
-    int area;
+// struct city_details{
+//     string name;
+//     int population;
+//     int area;
+// };
+
+struct datas{
+    uint16_t a;
+    uint32_t b;
+    int8_t c;
 };
 
 int main()
@@ -24,7 +29,17 @@ int main()
 
 
     //a 4*4 matrix;
-    int arr[4][4];
-    arr[]
+    // int arr[4][4];
+
+    // int a=10;
+    // int *p;
+    // p=&a;
+    // p++;
+    // uint16_t aa=110;
+
+    // std::cout<<aa<<std::endl;
+    datas u1;
+    std::cout<< sizeof(u1)<<std::endl;
+   
 
 }
