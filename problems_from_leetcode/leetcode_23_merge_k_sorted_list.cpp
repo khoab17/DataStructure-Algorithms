@@ -37,16 +37,7 @@ public:
         {
             if(ln->val < l->val)
             {
-                if(ln->val < head->val)
-                {
-                    ListNode *temp=ln;
-                    ln=ln->next;
-                    temp->next=head;
-                    head=temp;
-                }
-                else{
-                    
-                }
+                
             }
         }
       }
