@@ -36,6 +36,6 @@ int main()
             nums.push_back(t);
         }
 
-        cout<<"Answer"<<solve(nums)<<"\n";
+        cout<<solve(nums)<<"\n";
     }
 }
