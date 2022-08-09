@@ -31,7 +31,6 @@ public:
                     preorder.push(root->right);
                 if(root->left)
                     preorder.push(root->left);
-                cout<<"size"<<preorder.size()<<endl;
             }
             return res;
         }
