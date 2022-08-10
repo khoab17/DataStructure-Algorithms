@@ -24,6 +24,7 @@ public:
             if( !banned_words.count(s))
             {
                 seen_words[s]++;
+                cout<<s<<":"<<seen_words[s]<<endl;
                 if(seen_words[s]>max){
                     max=seen_words[s];
                     ans=s;

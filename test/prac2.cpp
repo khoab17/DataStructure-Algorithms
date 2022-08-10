@@ -41,7 +41,7 @@ int main() {
     //     getline(cin,s);
     // }
 
-    cout<<climbStairs(4)<<endl;
+    //cout<<climbStairs(4)<<endl;
 
     // vector<int> nums={1,2,3,4,9,7,6,5,2,1};
 	// nums=solve(nums);
@@ -50,5 +50,18 @@ int main() {
     // {
     //     cout<<*i<<" ";
     // }
+    // int arr[]={5,4,3,2,1};
+    // sort(arr,arr+5);
+    // for(int i:arr)
+    // {
+    //     cout<<i<<" ";
+    // }
+
+    vector<int> v(10,0);
+    for(int i: v)
+    {
+        cout<<i<<endl;
+    }
+
 	return 0;
 }
