@@ -1,29 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-int solve(int n)
-{
-    if(n==1)
-        return 2;
-    else{
-        return (n+2)/3;
-    }
-}
-
 int main()
 {
     std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
+    std::cin.tie(0);
     std::cout.tie(0);
 
     int t_Case;
     cin>>t_Case;
+
+    int n,m;
     while(t_Case--)
     {
-        int n;
-        cin>>n;
-        cout<<solve(n)<<"\n";
+        cin>>n>>m;
+        if( (n+m)%2==0 )
+            cout<<"Tonya\n";
+        else 
+            cout<<"Burenka\n";
     }
-
  }
