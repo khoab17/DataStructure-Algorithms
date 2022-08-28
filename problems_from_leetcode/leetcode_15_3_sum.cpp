@@ -11,6 +11,7 @@ public:
         
         sort(nums.begin(),nums.end());
         vector<vector<int>> ans;
+
         for(int i=0; i<size-2; i++)
         {
             int start = i+1;
@@ -29,7 +30,6 @@ public:
                 }
                 else
                 {
-                    
                     vector<int> vec;
                     vec.push_back(nums[i]);
                     vec.push_back(nums[start]);
