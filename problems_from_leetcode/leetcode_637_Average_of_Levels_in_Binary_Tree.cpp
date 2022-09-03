@@ -49,10 +49,10 @@ int main(){
     root->right->right=new TreeNode(7);
     Solution s;
     vector<double> ans=s.averageOfLevels(root);
-    // for(auto i:ans)
-    // {
-    //     cout<<i<<endl;
-    // }
-    long long a=324e11;
-    cout<<a<<endl;
+    for(auto i:ans)
+    {
+        cout<<i<<endl;
+    }
+    // long long a=324e11;
+    // cout<<a<<endl;
 }
