@@ -28,6 +28,5 @@ int main(){
     vector<int> ans=s.numsSameConsecDiff(3,7);
     for(int i:ans)
         cout<<i<<" ";
-    cout<<"end\n";
 
 }
