@@ -34,6 +34,14 @@ void print_Tree(Node *root){
     print_Tree(root->right);
 }
 
+//preOrder
+void preOrder(Node *root){
+    if(!root) return ;
+    cout<<root->val<<" ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
+
 int main(){
     Node *root=new Node(1);
     root->left=new Node(2);
@@ -43,5 +51,5 @@ int main(){
     root->right->left=new Node(6);
     root->right->right=new Node(7);
 
-    DFS(root);
+    preOrder(root);
 }
