@@ -36,26 +36,78 @@ void loop()
 }
 
 
+
+// vector<int> climbingLeaderboard(vector<int> ranked, vector<int> player) {
+//     vector<int> rank(player.size());
+//     for(auto i: player) ranked.emplace_back(i);
+//     sort(ranked.rbegin(),ranked.rend());
+//     ranked.erase( unique( ranked.begin(), ranked.end() ), ranked.end() );
+    
+//     unordered_map<int, int> ranking;
+    
+//     int m=ranked.size();
+//     int n=player.size();
+//     int pos=0;
+//     for(int i=0; i<m; i++){
+//         ranking[ranked[i]]=pos+1;
+//         pos++;
+//     }
+    
+//     for(int i=0; i<n; i++){
+//         rank[i]=ranking[player[i]];
+//     }
+//     return rank;
+// }   
+
+
+int binary_search(vector<int> &ranked,int *arr,int n, int score){
+    int low=0,high=n-1;
+    while(low<=high){
+        int mid= (high+low)/2;
+        if( score> ranked[mid-1] && score > ranked[mid+1] )
+        {
+            if(score==ranked[mid])
+                return arr[mid];
+            else 
+                return arr[mid-1]+1;
+        }
+        if( score > ranked[mid]){
+            high=mid-1;
+        }
+        else
+            low=mid+1;
+    }
+}
+
+vector<int> climbingLeaderboard(vector<int> ranked, vector<int> player) {
+    vector<int> rank(player.size());
+    int arr[ranked.size()];
+    arr[0]=1;
+    int n=ranked.size();
+    for(int i=1;  i<n; i++){
+        if(ranked[i-1]==ranked[i]){
+            arr[i]=arr[i-1];
+        }
+        else {
+            arr[i]=arr[i-1]+1;
+        }
+    }
+    
+    int m=player.size();
+    for(int i=0; i<m; i++){
+        rank[i]=binary_search(ranked,arr,n,player[i]);
+    }
+    return rank;
+}  
+
 int main()
 {
-    // int n;
-    // for(int i=0;i< 10;i++)
-    // {
-    //     n=rand()%10+20;
-    //     cout<<n<<endl;
-    // }
 
-    time_t  start,end;
-    time(&start);
-
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    loop();
-    time(&end);
-    double  timetaken=double(end-start);
-     cout << "Time taken by program is : " << fixed
-         << timetaken << setprecision(5);
-    cout << " sec " << endl;
-
+    vector<int> ranked={100 ,100 ,50 ,40, 40, 20, 10};
+    vector<int> player={5 ,25, 50, 120};
+    vector<int> ans=climbingLeaderboard(ranked,player);
+    for(auto i: ans){
+        cout<<i<<" ";
     }
+
+}
