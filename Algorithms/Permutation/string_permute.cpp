@@ -12,7 +12,19 @@ void permute(string s, int l, int r)
     }
 }
 
+//another approach
+vector<string> ans;
+vector<string> permute(string s){
+    sort(s.begin(),s.end());
+    do{
+        ans.emplace_back(s);
+    }while (next_permutation(s.begin(),s.end()));
+    return ans;
+}
+
 int main(){
 
-    permute("ABC",0,2);
+    permute("123",0,2);
+    //vector<string> ans=permute("123");
+    //for(auto i: ans) cout<<i<<"\n";
 }

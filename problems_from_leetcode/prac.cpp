@@ -57,7 +57,9 @@ void loop()
 //         rank[i]=ranking[player[i]];
 //     }
 //     return rank;
-// }   
+// }
+
+
 
 
 int binary_search(vector<int> &ranked,int *arr,int n, int score){
@@ -99,15 +101,95 @@ vector<int> climbingLeaderboard(vector<int> ranked, vector<int> player) {
     }
     return rank;
 }  
+int libraryFine(int d1, int m1, int y1, int d2, int m2, int y2) {
+        if(y1<y2) return 0;
+        else if(y1==y2)
+        {
+            if(m1<m2)return 0;
+            else
+            {
+               if(m1==m2)
+               {
+                if(d1<=d2) return 0;
+                else return (d1-d2)*15;
+               }
+               else return (m1-m2)*500;
+            }
+            
+        }
+        else return 1000;
+}
+
+vector<int> cutTheSticks(vector<int> arr) {
+    int n=arr.size();
+    sort(arr.begin(),arr.end());
+    
+    vector<int> ans;
+    ans.emplace_back(n);
+
+    while(arr.size()){
+        int s=arr[0];
+        for(int i=0; i<arr.size(); i++){
+            if(arr[i]>=s) arr[i]-=s;
+            if(arr[i]==0)
+            {
+                arr.erase(arr.begin()+i);
+                i--;
+            }
+        }   
+        ans.emplace_back(arr.size());
+    }
+
+    return ans;
+}
+
+int equalizeArray(vector<int> arr) {
+    int s=arr.size();
+    unordered_map<int, int>count;
+    for(auto i: arr) ++count[i];
+    int max=0;
+    int n=count.size();
+    for(int i=0; i<s; i++){
+        if(count[arr[i]]>max)max=count[arr[i]];
+    }
+    return n-max;
+}
+
+int saveThePrisoner(int n, int m, int s) {
+    return (m+s)%n-1;
+}
+
+int factorial(int n){
+    if(n==1) return 1;
+    return n*factorial(n-1);
+}
 
 int main()
 {
-
-    vector<int> ranked={100 ,100 ,50 ,40, 40, 20, 10};
-    vector<int> player={5 ,25, 50, 120};
-    vector<int> ans=climbingLeaderboard(ranked,player);
-    for(auto i: ans){
-        cout<<i<<" ";
-    }
+    cout<<factorial(5);
+    //cout<<saveThePrisoner(352926151,380324688 ,94730870);
+    // vector<int> arr={3 ,3, 2, 1, 3};
+    // cout<<equalizeArray(arr);
+    // vector<int> nums={5, 4, 4, 2, 2, 8 };
+    // vector<int> ans=cutTheSticks(nums);
+    // for(auto i: ans) cout<<i<<" ";
+    //cout<<libraryFine(2, 7, 1014,1 ,1, 1015);
+    // vector<int> ranked={100 ,100 ,50 ,40, 40, 20, 10};
+    // vector<int> player={5 ,25, 50, 120};
+    // vector<int> ans=climbingLeaderboard(ranked,player);
+    // for(auto i: ans){
+    //     cout<<i<<" ";
+    // }
+    // char c ='a';
+    // for(int i=0;i<26; i++){
+    //     cout<<c++<<" ";
+    // }
+    //cout<<10%0;
+    // int n=2;
+    // while (n--)
+    // {
+    //     cout<<"hello";
+    // }
+    
 
 }
